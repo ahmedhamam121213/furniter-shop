@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -38,7 +39,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AngularFireDatabaseModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [ AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
