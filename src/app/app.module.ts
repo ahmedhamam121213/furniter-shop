@@ -24,7 +24,7 @@ import { CheckingOutComponent } from './checking-out/checking-out.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductService } from './product.service';
 import {FormsModule} from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,8 @@ import { CustomFormsModule } from 'ng2-validation'
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     NgbModule.forRoot(),
-    CustomFormsModule
+    CustomFormsModule,
+    
   ],
   providers: [ AuthService,
     ProtectLinkService,
