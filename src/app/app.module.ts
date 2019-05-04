@@ -1,3 +1,6 @@
+import { CategoriesService } from './categories.service';
+import { AdminAuthGuardService } from './admin-auth-guard.service';
+import { ProtectLinkService } from './protect-link.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,6 +20,11 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CheckingOutComponent } from './checking-out/checking-out.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { ProductService } from './product.service';
+import {FormsModule} from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation'
 
 @NgModule({
   declarations: [
@@ -30,16 +38,25 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
+    CheckingOutComponent,
+    ProductFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    CustomFormsModule
   ],
-  providers: [ AuthService ],
+  providers: [ AuthService,
+    ProtectLinkService,
+    AdminAuthGuardService,
+    CategoriesService,
+    ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
