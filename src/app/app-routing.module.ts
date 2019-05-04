@@ -21,7 +21,7 @@ const routes: Routes = [
   { path : "check-out" , component : CheckingOutComponent,canActivate : [ProtectLinkService] },
   { path : "my/orders" , component : MyOrdersComponent , canActivate : [ProtectLinkService] },
   { path : "admin/product/new" , component : ProductFormComponent, canActivate : [ProtectLinkService]},
-  
+  { path : "admin/product/:id" , component : ProductFormComponent, canActivate : [ProtectLinkService]},
   { path : "admin/orders" , component : AdminOrdersComponent, canActivate : [ProtectLinkService,]},
   { path : "admin/products" , component : AdminProductsComponent , canActivate : [ProtectLinkService] }
 ];
